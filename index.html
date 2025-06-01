@@ -104,12 +104,20 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
             font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .logo-img {
+            height: 55px;
+            /* ajuste conforme necessário */
+            margin-right: 10px;
         }
 
         .nav-links {
@@ -737,6 +745,9 @@
             padding: 100px 0;
             background: linear-gradient(135deg, var(--bg-light) 0%, rgba(255, 107, 157, 0.05) 100%);
             position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
 
         .maps::before {
@@ -756,6 +767,7 @@
             padding: 0 2rem;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         .maps .section-header {
@@ -790,10 +802,9 @@
         }
 
         .maps-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .map-container {
@@ -803,6 +814,8 @@
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
             position: relative;
+            max-width: 800px;
+            width: 100%;
         }
 
         .map-container::before {
@@ -826,98 +839,13 @@
 
         .map-container iframe {
             width: 100%;
-            height: 400px;
+            height: 500px;
             border: none;
             display: block;
             transition: all 0.3s ease;
         }
 
-        .map-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .info-card {
-            background: var(--light-color);
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
-            transition: width 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .info-card:hover::before {
-            width: 8px;
-        }
-
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light-color);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover .info-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .info-content h3 {
-            color: var(--dark-color);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .info-content p {
-            color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
         /* Responsive Design */
-        @media (max-width: 968px) {
-            .maps-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .map-info {
-                order: -1;
-            }
-
-            .map-container iframe {
-                height: 300px;
-            }
-        }
-
         @media (max-width: 768px) {
             .maps {
                 padding: 60px 0;
@@ -935,30 +863,18 @@
                 margin-bottom: 2.5rem;
             }
 
-            .info-card {
-                padding: 1.5rem;
-            }
-
-            .info-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
-            }
-
-            .info-content h3 {
-                font-size: 1.1rem;
+            .map-container iframe {
+                height: 350px;
             }
         }
 
         @media (max-width: 480px) {
-            .info-card {
-                flex-direction: column;
-                text-align: center;
-                align-items: center;
+            .maps .section-header h2 {
+                font-size: 1.8rem;
             }
 
-            .info-icon {
-                margin-bottom: 0.5rem;
+            .map-container iframe {
+                height: 300px;
             }
         }
     </style>
@@ -976,7 +892,10 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Estação Doces</div>
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Logo" class="logo-img">
+                <span>Estação Doces</span>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
@@ -1146,45 +1065,15 @@
         <div class="container">
             <div class="section-header fade-in">
                 <h2>Nossa Localização</h2>
-                <p>Venha nos visitar! Estamos localizados em um ponto de fácil acesso no centro da cidade</p>
+                <p>Venha nos visitar! Estamos localizados em um ponto de fácil acesso no centro de Mogi das Cruzes</p>
             </div>
             <div class="maps-content">
                 <div class="map-container fade-in">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975!2d-46.633308!3d-23.550520!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a2b2ed7f3a1%3A0xab35da2f5ca62674!2sSé%2C%20São%20Paulo%20-%20SP!5e0!3m2!1spt!2sbr!4v1635959542812!5m2!1spt!2sbr"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2522223450564!2d-46.17937022466932!3d-23.593598178781444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce7a31419f99af%3A0x866d91123d3241c5!2sR.%20Francisco%20Rodrigues%20Mathias%2C%2080%20-%20Vila%20Andrade%2C%20Mogi%20das%20Cruzes%20-%20SP%2C%2008850-110!5e0!3m2!1spt-BR!2sbr!4v1717269869483!5m2!1spt-BR!2sbr"
                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        title="Localização Estação Doces">
+                        title="Localização Estação dos Doces">
                     </iframe>
-                </div>
-                <div class="map-info fade-in">
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Endereço Completo</h3>
-                            <p>Rua das Flores, 123<br>Centro, Sua Cidade - SP<br>CEP: 01001-000</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-car"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Estacionamento</h3>
-                            <p>Estacionamento gratuito disponível<br>Fácil acesso por transporte público</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">
-                            <i class="fas fa-directions"></i>
-                        </div>
-                        <div class="info-content">
-                            <h3>Como Chegar</h3>
-                            <p>Próximo ao metrô e principais linhas de ônibus<br>Localização central e de fácil acesso
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1206,16 +1095,17 @@
                         </div>
                         <div>
                             <h4>Endereço</h4>
-                            <p>Rua das Flores, 123<br>Centro, Sua Cidade - SP</p>
+                            <p>Rua Francisco Rodrigues Mathias, 80<br>Vila Andrade, Mogi das Cruzes - SP<br>CEP:
+                                08850-110</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fab fa-whatsapp"></i>
                         </div>
                         <div>
-                            <h4>Telefone</h4>
-                            <p>(11) 99999-9999</p>
+                            <h4>WhatsApp</h4>
+                            <p>(11) 9 3951-0998</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1224,7 +1114,7 @@
                         </div>
                         <div>
                             <h4>E-mail</h4>
-                            <p>contato@estacaodoces.com.br</p>
+                            <p>gameoversabauna@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1233,7 +1123,8 @@
                         </div>
                         <div>
                             <h4>Horário de Funcionamento</h4>
-                            <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 16h</p>
+                            <p>Segunda a Sexta: 09h00 às 18h30<br>
+                                Feriado, Sábado e Domingo: 09h00 às 19h00</p>
                         </div>
                     </div>
                 </div>
@@ -1274,16 +1165,22 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="#" class="social-link" title="Facebook">
+                <a href="https://www.facebook.com/people/Esta%C3%A7%C3%B5es-dos-Doces-e-Papelaria/100090915730305/?rdid=sX2YqAmuvB0ivYb6&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15o9GT4LFT%2F"
+                    class="social-link" title="Facebook" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" class="social-link" title="Instagram">
+
+                <a href="https://www.instagram.com/bomboniereepapelaria/?igsh=ZWp3bjQxZm95Zmdk#" class="social-link"
+                    title="Instagram" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="social-link" title="WhatsApp">
+
+                <a href="https://wa.me/5511939510998" class="social-link" title="WhatsApp" target="_blank"
+                    rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="#" class="social-link" title="E-mail">
+
+                <a href="gameoversabauna@gmail.com" class="social-link" title="E-mail">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -1298,7 +1195,7 @@
 
     <!-- Floating WhatsApp Button -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-button">
+        <a href="https://wa.me/5511939510998" target="_blank" class="whatsapp-button">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
