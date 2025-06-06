@@ -337,6 +337,7 @@
         }
 
         /* Hero Section */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             background: linear-gradient(135deg, var(--bg-light) 0%, #fff5f0 100%);
@@ -445,34 +446,285 @@
             transform: translateY(-3px);
         }
 
+        /* Hero Image - Seção com imagem real de rosquinhas */
         .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .donuts-container {
+            position: relative;
+            max-width: 500px;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .hero-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: all 0.3s ease;
+        .donuts-image {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(255, 107, 157, 0.3));
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: floatImage 6s ease-in-out infinite;
+            cursor: pointer;
         }
 
-        .hero-card:hover {
-            transform: perspective(1000px) rotateY(0deg) translateY(-10px);
-            box-shadow: var(--shadow-hover);
+        .donuts-image:hover {
+            transform: scale(1.05) rotate(2deg);
+            filter: drop-shadow(0 30px 60px rgba(255, 107, 157, 0.4));
         }
 
-        .hero-card i {
-            font-size: 4rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
+        @keyframes floatImage {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+
+            66% {
+                transform: translateY(5px) rotate(-0.5deg);
+            }
+        }
+
+        /* Efeitos decorativos ao redor da imagem */
+        .image-decoration {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            pointer-events: none;
+        }
+
+        .decoration-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid;
+            animation: rotate 15s linear infinite;
+        }
+
+        .ring-1 {
+            width: 100%;
+            height: 100%;
+            border-color: rgba(255, 107, 157, 0.2);
+            animation-direction: normal;
+        }
+
+        .ring-2 {
+            width: 120%;
+            height: 120%;
+            top: -10%;
+            left: -10%;
+            border-color: rgba(247, 147, 30, 0.15);
+            animation-direction: reverse;
+            animation-duration: 20s;
+        }
+
+        .ring-3 {
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            border-color: rgba(255, 107, 157, 0.1);
+            animation-duration: 12s;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Brilhos e sparkles */
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ffeb3b, transparent);
+            border-radius: 50%;
+            animation: sparkleAnimation 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .sparkle:nth-child(1) {
+            top: 15%;
+            left: 15%;
+            animation-delay: 0s;
+            background: radial-gradient(circle, #ff6b9d, transparent);
+        }
+
+        .sparkle:nth-child(2) {
+            top: 25%;
+            right: 20%;
+            animation-delay: 1s;
+            background: radial-gradient(circle, #f7931e, transparent);
+        }
+
+        .sparkle:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 2s;
+            background: radial-gradient(circle, #4caf50, transparent);
+        }
+
+        .sparkle:nth-child(4) {
+            bottom: 15%;
+            right: 15%;
+            animation-delay: 0.5s;
+            background: radial-gradient(circle, #2196f3, transparent);
+        }
+
+        .sparkle:nth-child(5) {
+            top: 50%;
+            left: 5%;
+            animation-delay: 1.5s;
+            background: radial-gradient(circle, #9c27b0, transparent);
+        }
+
+        .sparkle:nth-child(6) {
+            top: 50%;
+            right: 5%;
+            animation-delay: 2.5s;
+            background: radial-gradient(circle, #ff5722, transparent);
+        }
+
+        @keyframes sparkleAnimation {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Gradiente de fundo sutil */
+        .image-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(255, 107, 157, 0.1), transparent);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        /* Partículas flutuantes */
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: floatParticle 8s linear infinite;
+        }
+
+        .particle:nth-child(odd) {
+            background: var(--primary-color);
+            animation-duration: 10s;
+        }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(3) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            left: 40%;
+            animation-delay: 3s;
+        }
+
+        .particle:nth-child(5) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(6) {
+            left: 60%;
+            animation-delay: 5s;
+        }
+
+        .particle:nth-child(7) {
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(8) {
+            left: 80%;
+            animation-delay: 7s;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.6;
+            }
+
+            90% {
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* Services Section */
@@ -868,6 +1120,28 @@
                 margin-bottom: 1.5rem;
             }
 
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .donuts-container {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .donuts-image {
+                max-width: 350px;
+            }
+
+            .donuts-container {
+                max-width: 300px;
+                width: 100%;
+            }
+
+            .donuts-image {
+                max-width: 280px;
+            }
+
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
@@ -911,6 +1185,20 @@
 
             .hero-text p {
                 font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .donuts-container {
+                max-width: 250px;
+                width: 100%;
+            }
+
+            .donuts-image {
+                max-width: 230px;
             }
 
             .section-header h2 {
@@ -1057,6 +1345,16 @@
             .map-container iframe {
                 height: 350px;
             }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+
         }
 
         @media (max-width: 480px) {
@@ -1067,6 +1365,96 @@
             .map-container iframe {
                 height: 300px;
             }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Seção de Depoimentos */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .author-info span {
+            color: var(--text-light);
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -1134,17 +1522,39 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="hero-card">
-                    <i class="fas fa-store"></i>
-                    <h3>Estação Doces</h3>
-                    <p>Bomboniere & Papelaria</p>
-                    <div style="margin-top: 1rem;">
-                        <i class="fas fa-star" style="color: #f7931e;"></i>
-                        <i class="fas fa-star" style="color: #f7931e;"></i>
-                        <i class="fas fa-star" style="color: #f7931e;"></i>
-                        <i class="fas fa-star" style="color: #f7931e;"></i>
-                        <i class="fas fa-star" style="color: #f7931e;"></i>
+                <div class="donuts-container">
+                    <!-- Imagem real das 3 rosquinhas -->
+                    <img src="assets/img/doces.png" alt="Três rosquinhas deliciosas" class="donuts-image">
+
+                    <!-- Efeitos decorativos -->
+                    <div class="image-decoration">
+                        <div class="decoration-ring ring-1"></div>
+                        <div class="decoration-ring ring-2"></div>
+                        <div class="decoration-ring ring-3"></div>
+
+                        <!-- Sparkles/Brilhos -->
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
                     </div>
+
+                    <!-- Glow de fundo -->
+                    <div class="image-glow"></div>
+                </div>
+
+                <!-- Partículas flutuantes -->
+                <div class="floating-particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
                 </div>
             </div>
         </div>
@@ -1260,6 +1670,77 @@
                         <div class="collage-item">
                             <i class="fas fa-handshake"></i>
                             <h4>Confiança</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="depoimentos">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>O que nossos clientes dizem</h2>
+                <p>Confira os depoimentos de quem já conhece a qualidade dos nossos produtos e atendimento</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Produtos de excelente qualidade e atendimento excepcional! Sempre encontro tudo que preciso para
+                        meus filhos na escola. Recomendo muito!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Maria Silva</h4>
+                            <span>Cliente há 3 anos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Os doces são deliciosos e sempre frescos! Minha loja preferida para comprar guloseimas para as
+                        festas das crianças. Preços justos e qualidade garantida."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>João Santos</h4>
+                            <span>Cliente há 2 anos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Atendimento personalizado e produtos de primeira linha! Sempre me ajudam a escolher os melhores
+                        materiais escolares. Uma loja de confiança!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Oliveira</h4>
+                            <span>Cliente há 4 anos</span>
                         </div>
                     </div>
                 </div>
@@ -1743,6 +2224,39 @@
                 }, index * 200);
             });
         }, 3000);
+        // Filtro de categorias do catálogo
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Botão Ver Mais
+            document.getElementById('verMaisBtn').addEventListener('click', function (e) {
+                e.preventDefault();
+                alert('Redirecionando para o catálogo completo...\n(Aqui você pode adicionar o link para sua página de catálogo)');
+                // Aqui você pode adicionar o redirecionamento para sua página de catálogo
+                // window.location.href = 'catalogo.html';
+            });
+        });
     </script>
 </body>
 
