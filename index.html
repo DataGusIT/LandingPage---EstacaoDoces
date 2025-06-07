@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estação Doces - Bomboniere & Papelaria</title>
+    <title>Estação dos Doces - Bomboniere & Papelaria</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -336,7 +336,6 @@
             transform: scale(1.2);
         }
 
-        /* Hero Section */
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -781,6 +780,16 @@
             box-shadow: var(--shadow-hover);
         }
 
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
         .service-icon {
             width: 80px;
             height: 80px;
@@ -1053,6 +1062,43 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Botão flutuante: Voltar ao Topo */
+        .back-to-top-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .back-to-top-float.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-to-top-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+        }
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -1339,6 +1385,11 @@
                 height: 350px;
             }
 
+            .testimonials {
+                padding: 5rem 1rem;
+                /* Adiciona espaçamento lateral */
+            }
+
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -1359,6 +1410,7 @@
                 height: 300px;
             }
 
+
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
@@ -1366,7 +1418,6 @@
 
         /* Seção de Depoimentos */
         .testimonials {
-            padding: 5rem 0;
             background: var(--bg-light);
         }
 
@@ -1385,6 +1436,9 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .testimonial-card::before {
@@ -1457,7 +1511,7 @@
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="loader-spinner"></div>
-            <h3>Carregando Estação Doces...</h3>
+            <h3>Carregando Estação dos Doces...</h3>
         </div>
     </div>
     >
@@ -1466,7 +1520,7 @@
         <nav>
             <div class="logo">
                 <img src="assets/img/logo.png" alt="Logo" class="logo-img">
-                <span>Estação Doces</span>
+                <span>Estação dos Doces</span>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio"><i class="fas fa-home"></i>Início</a></li>
@@ -1685,14 +1739,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Produtos de excelente qualidade e atendimento excepcional! Sempre encontro tudo que preciso para
-                        meus filhos na escola. Recomendo muito!"</p>
+                    <p>"Comércio antigo em Sabaúna, muita variedade de doces, os picolés são sensacionais.
+                        E de quebra ainda conta com o serviço de declaração do imposto de renda entre outros."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Maria Silva</h4>
+                            <h4>Rener Guislandi</h4>
                             <span>Cliente há 3 anos</span>
                         </div>
                     </div>
@@ -1705,14 +1759,14 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Os doces são deliciosos e sempre frescos! Minha loja preferida para comprar guloseimas para as
-                        festas das crianças. Preços justos e qualidade garantida."</p>
+                    <p>"TEM UM PICOLÉ DIFERENCIADO
+                        VALE A PENA EXPERIMENTAR"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
-                            <h4>João Santos</h4>
+                            <h4>Rejane Guislandi</h4>
                             <span>Cliente há 2 anos</span>
                         </div>
                     </div>
@@ -1725,14 +1779,13 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Atendimento personalizado e produtos de primeira linha! Sempre me ajudam a escolher os melhores
-                        materiais escolares. Uma loja de confiança!"</p>
+                    <p>"Muito legal"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
-                            <h4>Ana Oliveira</h4>
+                            <h4>Ryan Rodrigues</h4>
                             <span>Cliente há 4 anos</span>
                         </div>
                     </div>
@@ -1861,7 +1914,7 @@
                     <i class="fab fa-whatsapp"></i>
                 </a>
 
-                <a href="gameoversabauna@gmail.com" class="social-link" title="E-mail">
+                <a href="mailto:gameoversabauna@gmail.com" class="social-link" title="E-mail">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -1869,7 +1922,7 @@
             <p style="margin-bottom: 1rem; opacity: 0.8;">Bomboniere & Papelaria - Doçura e Criatividade em um só lugar
             </p>
             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; margin-top: 2rem;">
-                <p>&copy; 2025 Estação Doces. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Estação dos Doces. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
@@ -1880,6 +1933,13 @@
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
+    <!-- Floating Back to Top Button -->
+    <div class="back-to-top-float">
+        <a href="#" class="back-to-top-button" title="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+
 
     <script>
         // Loading Screen
@@ -1920,6 +1980,28 @@
             }
 
             lastScrollTop = scrollTop;
+        });
+
+        // Seleciona o botão
+        const backToTop = document.querySelector('.back-to-top-float');
+        const backToTopButton = document.querySelector('.back-to-top-button');
+
+        // Mostra/oculta o botão ao rolar a página
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Faz a rolagem suave ao clicar no botão
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o comportamento padrão do link
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Smooth scroll for navigation links
