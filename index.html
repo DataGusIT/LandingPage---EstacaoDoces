@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estação dos Doces - Bomboniere & Papelaria</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <style>
         * {
             margin: 0;
@@ -773,6 +774,11 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 107, 157, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .service-card:hover {
@@ -1066,7 +1072,7 @@
         /* Botão flutuante: Voltar ao Topo */
         .back-to-top-float {
             position: fixed;
-            bottom: 20px;
+            bottom: 25px;
             left: 20px;
             z-index: 1000;
             opacity: 0;
