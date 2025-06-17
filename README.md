@@ -65,7 +65,7 @@ A Landing Page da Estação dos Doces é uma solução web moderna desenvolvida 
 
 | Desktop | Mobile | Tablet |
 |---------|--------|--------|
-| ![Desktop](assets/screenshots/desktop.png) | ![Mobile](assets/screenshots/mobile.png) | ![Tablet](assets/screenshots/tablet.png) |
+| ![Desktop]![Image](https://github.com/user-attachments/assets/112ffc81-c394-4460-97bb-0aec1ca01e95) | ![Mobile](assets/screenshots/mobile.png) 
 
 ## Instalação
 
