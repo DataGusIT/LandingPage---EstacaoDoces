@@ -59,38 +59,28 @@ A Landing Page da Estação dos Doces é uma solução web moderna desenvolvida 
 
 ## Demonstração
 
-🌐 **[Ver Demo ao Vivo](https://seu-usuario.github.io/boutique-elegance-landing)**
+🌐 **[Ver Demo ao Vivo](https://estacaodoces.vercel.app/)**
 
 ### Screenshots
 
-| Desktop | Mobile | Tablet |
-|---------|--------|--------|
-| ![Desktop]![Image](https://github.com/user-attachments/assets/112ffc81-c394-4460-97bb-0aec1ca01e95) | ![Mobile](assets/screenshots/mobile.png) 
+| Desktop | Mobile | 
+|---------|--------|
+| ![Image](https://github.com/user-attachments/assets/112ffc81-c394-4460-97bb-0aec1ca01e95) | ![Image](https://github.com/user-attachments/assets/01cf7b33-6621-41c1-bdd7-53b357707723) 
 
 ## Instalação
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/boutique-elegance-landing.git
-   cd boutique-elegance-landing
+   git clone https://github.com/seu-usuario/LandingPageEstacaoDoces.git
+   cd LandingPageEstacaoDoces
    ```
 
 2. **Abra no navegador**
    ```bash
    # Método 1: Abrir diretamente
    open index.html
+   ```
    
-   # Método 2: Servidor local (recomendado)
-   python -m http.server 8000
-   # ou
-   npx serve .
-   ```
-
-3. **Acessar a aplicação**
-   ```
-   http://localhost:8000
-   ```
-
 ## Estrutura do Projeto
 
 ```
@@ -136,27 +126,6 @@ boutique-elegance-landing/
 │         Contato                     │
 │  (Formulário + Newsletter)          │
 └─────────────────────────────────────┘
-```
-
-## Customização
-
-### Cores
-```css
-:root {
-  --primary-color: #d4af37;      /* Dourado elegante */
-  --secondary-color: #2c2c2c;    /* Cinza escuro */
-  --accent-color: #f8f8f8;       /* Branco off */
-  --text-color: #333333;         /* Texto principal */
-}
-```
-
-### Tipografia
-```css
-/* Fontes utilizadas */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
-
---font-heading: 'Playfair Display', serif;
---font-body: 'Poppins', sans-serif;
 ```
 
 ## Performance
@@ -219,7 +188,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 Para dúvidas ou sugestões sobre o projeto:
 
 - **Email**: [g.moreno.souza05@gmail.com](mailto:g.moreno.souza05@gmail.com)
-- **LinkedIn**: [Gustavo Moreno Souza](https://www.linkedin.com/in/seu-perfil/)
+- **LinkedIn**: [Gustavo Moreno Souza](http://linkedin.com/in/gustavo-moreno-8a925b26a/)
 - **Portfolio**: [https://gustavomoreno.vercel.app](https://gustavomoreno.vercel.app)
 
 ---
@@ -227,5 +196,5 @@ Para dúvidas ou sugestões sobre o projeto:
 <div align="center">
   ⭐ Se este projeto foi útil, considere dar uma estrela no GitHub!
   <br><br>
-  Desenvolvido com ❤️ por [Seu Nome]
+  Desenvolvido por Gustavo Moreno
 </div>
