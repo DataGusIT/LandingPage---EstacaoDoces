@@ -2,7 +2,7 @@
 
 > Landing page moderna e responsiva para pequena loja de doces
 
-[![Status](https://img.shields.io/badge/Status-Finalizado-success)](https://github.com/seu-usuario/boutique-elegance-landing)
+[![Status](https://img.shields.io/badge/Status-Desenvolvimento-success)](https://github.com/DataGusIT/LandingPageEstacaoDoces)
 [![Version](https://img.shields.io/badge/Version-1.0.0-blue)](https://github.com/seu-usuario/boutique-elegance-landing/releases)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)](https://html.spec.whatwg.org/)
@@ -87,20 +87,7 @@ A Landing Page da Estação dos Doces é uma solução web moderna desenvolvida 
 boutique-elegance-landing/
 ├── index.html              # Página principal
 ├── assets/
-│   ├── css/
-│   │   ├── style.css       # Estilos principais
-│   │   ├── responsive.css  # Media queries
-│   │   └── animations.css  # Animações CSS
-│   ├── js/
-│   │   ├── main.js         # JavaScript principal
-│   │   ├── animations.js   # Controle de animações
-│   │   └── form.js         # Validação de formulários
-│   ├── images/
-│   │   ├── products/       # Imagens dos produtos
-│   │   ├── gallery/        # Galeria de fotos
-│   │   └── icons/          # Ícones personalizados
-│   └── fonts/              # Fontes customizadas
-├── screenshots/            # Capturas de tela
+│   ├── img/
 └── README.md
 ```
 
